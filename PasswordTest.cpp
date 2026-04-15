@@ -14,9 +14,25 @@ class PasswordTest : public ::testing::Test
 		virtual void TearDown(){} //clean up after each test, (before destructor)
 };
 
+class unique_characters : public ::testing::Test
+{
+	protected:
+		unique_characters(){}
+		virtual ~unique_characters(){}
+		virtual void SetUp(){}
+		virtual void TearDown(){}
+}
+
 TEST(PasswordTest, single_letter_password)
 {
 	Password my_password;
 	int actual = my_password.count_leading_characters("Z");
+	ASSERT_EQ(1, actual);
+}
+
+TEST(unique_characters, multi_letter_password)
+{
+	Password my_char;
+	int complete = my_char.count_leading_characters("Z");
 	ASSERT_EQ(1, actual);
 }
