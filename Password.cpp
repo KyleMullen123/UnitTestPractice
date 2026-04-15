@@ -19,17 +19,22 @@ int Password::count_leading_characters(string phrase){
   return repetition;
 }
 
-unsigned int unique_characters(string same){
+unsigned int unique_characters(int same){
 
-  int rep = 1;
-  int in = 0;
+  bool_seen[256];
+  int same = 0;
 
-  while (in < same.length()-1 && same[in] == same[in+1])
-    {
-        rep++;
-        in++;
-    }
-  return rep;
+  while(i < 256)
+  if(same == seen[i]){
+      cout << "This password has been used before. Try again." << endl;
+  }
+
+  else  {
+      cout << "This password is avaliable to use." << endl;
+  }
+
+  return same;
+  
 }
 
 /*
