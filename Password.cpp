@@ -19,6 +19,19 @@ int Password::count_leading_characters(string phrase){
   return repetition;
 }
 
+unsigned int unique_characters(string same){
+
+  int rep = 1;
+  int in = 0;
+
+  while (in < same.length()-1 && same[in] == same[in+1])
+    {
+        rep++;
+        in++;
+    }
+  return rep;
+}
+
 /*
   receives a string and returns whether it has both at least one upper-case
   letter and at least one lower-case letter
@@ -104,4 +117,4 @@ bool Password::has_mixed_case(string str)
     }
   }
   return false;
-}
+} 
