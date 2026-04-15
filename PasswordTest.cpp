@@ -19,8 +19,8 @@ class unique_characters : public ::testing::Test
 	protected:
 		unique_characters(){}
 		virtual ~unique_characters(){}
-		virtual void SetUp(){}
-		virtual void TearDown(){}
+		virtual void Up(){}
+		virtual void Down(){}
 }
 
 TEST(PasswordTest, single_letter_password)
@@ -32,7 +32,7 @@ TEST(PasswordTest, single_letter_password)
 
 TEST(unique_characters, multi_letter_password)
 {
-	Password my_char;
+	unique_character my_char;
 	int complete = my_char.count_leading_characters("Z");
 	ASSERT_EQ(1, actual);
 }
